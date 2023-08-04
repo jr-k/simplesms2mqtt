@@ -1,0 +1,12 @@
+mobileDevice: '/dev/mobile'
+mobileBaudrate: 115200
+#mobilePinCode: 0000
+mqttClientId: 'simplesms2mqtt'
+mqttPrefix: 'sms'
+mqttHost: 'localhost'
+mqttPort: 1883
+#mqttUsername: ''
+#mqttPassword: ''
+#logFile: 'simplesms2mqtt.log'
+logLevel: 'INFO'
+logStdout: false

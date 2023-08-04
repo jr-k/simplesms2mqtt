@@ -1,0 +1,21 @@
+version: '3'
+services:
+  sms2mqtt:
+    container_name: simplesms2mqtt
+    restart: unless-stopped
+    image: jierka/simplesms2mqtt
+    devices:
+    - /dev/serial/by-id/usb-HUAWEI_HUAWEI_Mobile-if00-port0:/dev/mobile
+    environment:
+    - MOBILE_DEVICE=/dev/mobile
+    - MOBILE_BAUDRATE=115200
+    - MOBILE_PIN_CODE=1234
+    - MQTT_CLIENT_ID=simplesms2mqtt
+    - MQTT_PREFIX=sms
+    - MQTT_HOST=192.168.1.1
+    - MQTT_PORT=1883
+    - MQTT_USERNAME=username
+    - MQTT_PASSWORD=password
+    - LOG_FILE=simplesms2mqtt.log
+    - LOG_LEVEL=INFO
+    - LOG_STDOUT=true
